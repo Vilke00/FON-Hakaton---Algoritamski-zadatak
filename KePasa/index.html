@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projekat</title>
+	  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<style type="text/css">
+	canvas{
+		position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+	}
+</style>
+</head>
+
+<body>
+	
+		<canvas id="canvas" width="1000" height="1000"></canvas>
+
+	
+</body>
+<script type="text/javascript">
+	$( document ).ready(function() {
+		var razmakOdOse = 100;
+		var velicinaStranice = 800;
+
+		const zadatak = new Zadatak("#canvas");
+
+		var height = velicinaStranice* Math.sqrt(3)/2;
+		let a = [velicinaStranice/2 + razmakOdOse,razmakOdOse];
+  		let b = [razmakOdOse,height+razmakOdOse];
+  		let c = [razmakOdOse + velicinaStranice,height+razmakOdOse];
+		zadatak.drawTriangle(a,b,c);
+});
+</script>
+</html>
