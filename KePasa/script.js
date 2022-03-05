@@ -22,7 +22,7 @@ obrnutiTrougao(a,b,c,brojac){
 
   this.triangle(newA,newB,newC,"#060606")
 	brojac++;
-	if (brojac <8) {
+	if (brojac <8) {//8 predstavlja broj ponavljanja
   this.obrnutiTrougao(a,newB,newC,brojac);
   this.obrnutiTrougao(newC,newA,c,brojac);
   this.obrnutiTrougao(newB,b,newA,brojac);
@@ -48,4 +48,22 @@ triangle(a,b,c,color){
   this.context.fill();
   this.context.closePath();
 }
+
+
+static velicinaEkrana(id){
+	let height = $( window ).height() - 50;
+	let width = $( window ).width() - 50;
+	let canv = document.querySelector(id);
+	if (height > width) {
+		canv.width = width;
+		canv.height = width;
+		return width;
+	}else{
+		canv.width = height;
+		canv.height = height;
+		return height;
+	}
+
+}
+
 }
